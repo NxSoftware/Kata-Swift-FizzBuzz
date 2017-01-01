@@ -10,5 +10,9 @@ enum FizzBuzz {
     }
     return result.isEmpty ? String(int) : result
   }
+  
+  static func values(from start: Int, to end: Int) -> [String] {
+    return (start...end).map(value)
+  }
 
 }
