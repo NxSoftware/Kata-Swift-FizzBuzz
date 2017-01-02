@@ -5,11 +5,10 @@ enum FizzBuzzStage2 {
     while i > 0 {
       if i % 10 == 3 {
         return "Fizz"
+      } else if i % 10 == 5 {
+        return "Buzz"
       }
       i /= 10
-    }
-    if int == 52 {
-      return "Buzz"
     }
     return FizzBuzz.value(for: int)
   }
