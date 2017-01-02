@@ -7,6 +7,10 @@ class FizzBuzzStage2Tests: XCTestCase {
     expect(13, toBe: "Fizz", "13 should be Fizz because it contains 3")
   }
   
+  func test23_givesFizz() {
+    expect(23, toBe: "Fizz", "23 should be Fizz because it contains 3")
+  }
+  
   // MARK: - Assertions
   
   private func expect(_ number: Int, toBe expected: String, _ failureMessage: String, file: StaticString = #file, line: UInt = #line) {
