@@ -27,10 +27,21 @@ class FizzBuzzStage2Tests: XCTestCase {
     expect(151, toBe: "Buzz", "151 should be Buzz because it contains 5")
   }
   
+  // MARK: - Lifecycle
+  
+  override func setUp() {
+    super.setUp()
+    sut = FizzBuzzStage2(filters: [FizzFilter(), BuzzFilter()])
+  }
+  
   // MARK: - Assertions
   
   private func expect(_ number: Int, toBe expected: String, _ failureMessage: String, file: StaticString = #file, line: UInt = #line) {
-    XCTAssertEqual(expected, FizzBuzzStage2.value(for: number), failureMessage, file: file, line: line)
+    XCTAssertEqual(expected, sut.value(for: number), failureMessage, file: file, line: line)
   }
+  
+  // MARK: - 
+  
+  private var sut: FizzBuzz!
   
 }

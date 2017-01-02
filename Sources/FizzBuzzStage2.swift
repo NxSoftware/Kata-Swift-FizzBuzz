@@ -1,8 +1,6 @@
-enum FizzBuzzStage2 {
+class FizzBuzzStage2: FizzBuzz {
 
-  static func value(for int: Int) -> String {
-    let filters: [FizzBuzzFilter] = [FizzFilter(), BuzzFilter()]
-    
+  override func value(for int: Int) -> String {
     var i = int
     while i > 0 {
       for filter in filters {
@@ -12,7 +10,7 @@ enum FizzBuzzStage2 {
       }
       i /= 10
     }
-    return FizzBuzz(filters: filters).value(for: int)
+    return super.value(for: int)
   }
 
 }

@@ -1,6 +1,6 @@
 class FizzBuzz {
 
-  private let filters: [FizzBuzzFilter]
+  let filters: [FizzBuzzFilter]
   
   init(filters: [FizzBuzzFilter]) {
     self.filters = filters
