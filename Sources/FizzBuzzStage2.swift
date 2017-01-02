@@ -1,12 +1,14 @@
 enum FizzBuzzStage2 {
 
   static func value(for int: Int) -> String {
+    let filters: [FizzBuzzFilter] = [FizzFilter(), BuzzFilter()]
+    
     var i = int
     while i > 0 {
-      if i % 10 == FizzFilter().number {
-        return FizzFilter().string
-      } else if i % 10 == BuzzFilter().number {
-        return BuzzFilter().string
+      for filter in filters {
+        if i % 10 == filter.number {
+          return filter.string
+        }
       }
       i /= 10
     }
