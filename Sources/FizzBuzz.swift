@@ -1,21 +1,35 @@
+protocol FizzBuzzFilter {
+  var number: Int { get }
+  var string: String { get }
+  
+  func value(for int: Int) -> String
+}
+
+extension FizzBuzzFilter {
+  func value(for int: Int) -> String {
+    if int % number == 0 {
+      return string
+    }
+    return ""
+  }
+}
+
 enum FizzBuzz {
 
-  enum Fizz {
-    static let number = 3
-    static let string = "Fizz"
+  class Fizz: FizzBuzzFilter {
+    let number = 3
+    let string = "Fizz"
   }
-  enum Buzz {
-    static let number = 5
-    static let string = "Buzz"
+  class Buzz: FizzBuzzFilter {
+    let number = 5
+    let string = "Buzz"
   }
 
   static func value(for int: Int) -> String {
     var result = ""
-    if int % Fizz.number == 0 {
-      result += Fizz.string
-    }
-    if int % Buzz.number == 0 {
-      result += Buzz.string
+    let filters: [FizzBuzzFilter] = [Fizz(), Buzz()]
+    for filter in filters {
+      result += filter.value(for: int)
     }
     return result.isEmpty ? String(int) : result
   }
