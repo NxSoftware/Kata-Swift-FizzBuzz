@@ -4,9 +4,9 @@ enum FizzBuzzStage2 {
     var i = int
     while i > 0 {
       if i % 10 == FizzBuzz.Fizz.number {
-        return "Fizz"
+        return FizzBuzz.Fizz.string
       } else if i % 10 == FizzBuzz.Buzz.number {
-        return "Buzz"
+        return FizzBuzz.Buzz.string
       }
       i /= 10
     }
