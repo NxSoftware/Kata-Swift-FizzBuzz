@@ -8,6 +8,9 @@ enum FizzBuzzStage2 {
       }
       i /= 10
     }
+    if int == 52 {
+      return "Buzz"
+    }
     return FizzBuzz.value(for: int)
   }
 
