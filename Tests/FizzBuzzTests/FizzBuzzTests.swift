@@ -139,7 +139,9 @@ class FizzBuzzTests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    sut = FizzBuzz(filters: [FizzFilter(), BuzzFilter()])
+    let fizz = DivisibleByFilter(number: 3, string: "Fizz")
+    let buzz = DivisibleByFilter(number: 5, string: "Buzz")
+    sut = FizzBuzz(filters: [fizz, buzz, DefaultFilter()])
   }
   
   // MARK: - Assertions

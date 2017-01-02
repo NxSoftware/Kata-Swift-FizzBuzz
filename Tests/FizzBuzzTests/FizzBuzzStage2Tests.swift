@@ -3,8 +3,24 @@ import XCTest
 
 class FizzBuzzStage2Tests: XCTestCase {
 
+  func test1_gives1() {
+    expect(1, toBe: "1", "1 should be 1")
+  }
+  
+  func test3_givesFizz() {
+    expect(3, toBe: "Fizz", "3 should be Fizz because it is divisible by 3")
+  }
+  
+  func test5_givesBuzz() {
+    expect(5, toBe: "Buzz", "5 should be Fizz because it is divisible by 5")
+  }
+
   func test13_givesFizz() {
     expect(13, toBe: "Fizz", "13 should be Fizz because it contains 3")
+  }
+  
+  func test15_givesFizz() {
+    expect(15, toBe: "Buzz", "15 should be Buzz because it contains 5")
   }
   
   func test23_givesFizz() {
@@ -31,7 +47,9 @@ class FizzBuzzStage2Tests: XCTestCase {
   
   override func setUp() {
     super.setUp()
-    sut = FizzBuzzStage2(filters: [FizzFilter(), BuzzFilter()])
+    let fizz = DivisibleByOrContainsFilter(number: 3, string: "Fizz")
+    let buzz = DivisibleByOrContainsFilter(number: 5, string: "Buzz")
+    sut = FizzBuzz(filters: [fizz, buzz, DefaultFilter()])
   }
   
   // MARK: - Assertions

@@ -9,9 +9,9 @@ class FizzBuzz {
   func value(for int: Int) -> String {
     var result = ""
     for filter in filters {
-      result += filter.value(for: int)
+      result = filter.decorate(result: result, withValueFor: int)
     }
-    return result.isEmpty ? String(int) : result
+    return result
   }
   
   func values(from start: Int, to end: Int) -> [String] {
