@@ -132,13 +132,24 @@ class FizzBuzzTests: XCTestCase {
                     "98",
                     "Fizz",
                     "Buzz"]
-    XCTAssertEqual(expected, FizzBuzz.values(from: 1, to: 100), "First 100 values should be correct")
+    XCTAssertEqual(expected, sut.values(from: 1, to: 100), "First 100 values should be correct")
+  }
+  
+  // MARK: - Lifecycle
+  
+  override func setUp() {
+    super.setUp()
+    sut = FizzBuzz(filters: [FizzFilter(), BuzzFilter()])
   }
   
   // MARK: - Assertions
   
   private func expect(_ number: Int, toBe expected: String, _ failureMessage: String, file: StaticString = #file, line: UInt = #line) {
-    XCTAssertEqual(expected, FizzBuzz.value(for: number), failureMessage, file: file, line: line)
+    XCTAssertEqual(expected, sut.value(for: number), failureMessage, file: file, line: line)
   }
+  
+  // MARK: - 
+  
+  private var sut: FizzBuzz!
   
 }

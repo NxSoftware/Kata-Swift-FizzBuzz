@@ -12,7 +12,7 @@ enum FizzBuzzStage2 {
       }
       i /= 10
     }
-    return FizzBuzz.value(for: int)
+    return FizzBuzz(filters: filters).value(for: int)
   }
 
 }
